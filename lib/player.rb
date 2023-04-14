@@ -1,3 +1,5 @@
+require_relative 'board'
+
 class Player
   attr_reader :color, :name
 
@@ -32,6 +34,4 @@ class Player
 		row = 8 - pos[1].to_i
 		[row, column]
 	end
-	
-end
 end
