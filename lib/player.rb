@@ -22,6 +22,7 @@ class Player
     raise "Invalid move entered" unless board.valid_move?(start_pos, end_pos)
 
     board.move_piece(start_pos, end_pos)
+		
   rescue StandardError => e
     puts e.message
     retry

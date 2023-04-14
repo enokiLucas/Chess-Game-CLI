@@ -1,5 +1,5 @@
 # player_spec.rb
-require_relative '/../lib/player'
+require_relative '../lib/player'
 
 RSpec.describe Player do
   describe '#make_move' do
