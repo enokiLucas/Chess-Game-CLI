@@ -26,4 +26,28 @@ class Board
   def stalemate?(color)
     # check if the game is in stalemate for the given color
   end
+
+  def promote_pawn(pawn_position)
+    # promote a pawn to a queen, knight, bishop or rook
+  end
+
+  def castling?(start_pos, end_pos)
+    # check if the move is castling
+  end
+
+  def en_passant?(start_pos, end_pos)
+    # check if the move is en passant
+  end
+
+  def fifty_moves_rule?
+    # check if the 50-move rule has been triggered
+  end
+
+  def insufficient_material?
+    # check if the game is in a state of insufficient material to checkmate
+  end
+
+  def threefold_repetition?
+    # check if the game has reached a threefold repetition
+  end
 end
