@@ -47,7 +47,7 @@ class Board
   def display
     puts "  A B C D E F G H "
     puts " +----------------+ "
-    @board.each_with_index do |row, i|
+    @grid.each_with_index do |row, i|
       print "#{8 - i}|"
       row.each do |piece|
         if piece.nil?
@@ -65,7 +65,7 @@ class Board
   private
 
   def setup_board
-    @board[0] = [
+    @grid[0] = [
       Rook.new(:black, [0, 0]),
       Knight.new(:black, [0, 1]),
       Bishop.new(:black, [0, 2]),
@@ -75,9 +75,9 @@ class Board
       Knight.new(:black, [0, 6]),
       Rook.new(:black, [0, 7])
     ]
-    @board[1] = Array.new(8) { |i| Pawn.new(:black, [1, i]) }
-    @board[6] = Array.new(8) { |i| Pawn.new(:white, [6, i]) }
-    @board[7] = [
+    @grid[1] = Array.new(8) { |i| Pawn.new(:black, [1, i]) }
+    @grid[6] = Array.new(8) { |i| Pawn.new(:white, [6, i]) }
+    @grid[7] = [
       Rook.new(:white, [7, 0]),
       Knight.new(:white, [7, 1]),
       Bishop.new(:white, [7, 2]),
