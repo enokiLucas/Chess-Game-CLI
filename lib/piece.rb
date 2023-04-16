@@ -5,14 +5,14 @@ class Piece
   end
 
   def valid_moves
-    # return an array of valid moves for the piece
+    raise NotImplementedError, "Subclass must implement abstract method"
   end
 
   def move_to(end_pos)
-    # move the piece to the given position
+    @pos = end_pos
   end
 
   def symbol
-    # return the symbol representing the piece
+    raise NotImplementedError, "Subclass must implement abstract method"
   end
 end

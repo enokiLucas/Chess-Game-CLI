@@ -21,26 +21,26 @@ class Board
 
       # Pawns
       (0..7).each do |col|
-        @grid[front_row][col] = Pawn.new(color, [front_row, col], self)
+        @grid[front_row][col] = Pawn.new(color, [front_row, col])
       end
 
       # Rooks
-      @grid[back_row][0] = Rook.new(color, [back_row, 0], self)
-      @grid[back_row][7] = Rook.new(color, [back_row, 7], self)
+      @grid[back_row][0] = Rook.new(color, [back_row, 0])
+      @grid[back_row][7] = Rook.new(color, [back_row, 7])
 
       # Knights
-      @grid[back_row][1] = Knight.new(color, [back_row, 1], self)
-      @grid[back_row][6] = Knight.new(color, [back_row, 6], self)
+      @grid[back_row][1] = Knight.new(color, [back_row, 1])
+      @grid[back_row][6] = Knight.new(color, [back_row, 6])
 
       # Bishops
-      @grid[back_row][2] = Bishop.new(color, [back_row, 2], self)
-      @grid[back_row][5] = Bishop.new(color, [back_row, 5], self)
+      @grid[back_row][2] = Bishop.new(color, [back_row, 2])
+      @grid[back_row][5] = Bishop.new(color, [back_row, 5])
 
       # Queen
-      @grid[back_row][3] = Queen.new(color, [back_row, 3], self)
+      @grid[back_row][3] = Queen.new(color, [back_row, 3])
 
       # King
-      @grid[back_row][4] = King.new(color, [back_row, 4], self)
+      @grid[back_row][4] = King.new(color, [back_row, 4])
     end
   end
 

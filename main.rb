@@ -9,5 +9,5 @@ require_relative 'lib/rook'
 require_relative 'lib/queen'
 require_relative 'lib/king'
 
-test = new.Board
+test = Board.new
 test.display
