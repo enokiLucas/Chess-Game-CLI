@@ -1,6 +1,7 @@
 class Piece
   def initialize(color, pos)
-    # create a new piece with the given color and position
+    @color = color
+    @pos = pos
   end
 
   def valid_moves
