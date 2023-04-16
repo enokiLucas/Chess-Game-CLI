@@ -1,3 +1,5 @@
+require 'colorize'
+
 class King < Piece
 
   def initialize(color, pos)
@@ -5,7 +7,7 @@ class King < Piece
   end
 
 	def symbol
-    @color == :white ? "♔" : "♚"
+    @color == :white ? "♔".colorize(:blue) : "♚".colorize(:red)
   end
 
   def valid_moves

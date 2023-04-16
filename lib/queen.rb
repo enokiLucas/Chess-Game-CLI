@@ -1,10 +1,12 @@
+require 'colorize'
+
 class Queen < Piece
   def initialize(color, pos)
     super(color, pos)
   end
 
 	def symbol
-    @color == :white ? "♕" : "♛"
+    @color == :white ? "♕".colorize(:blue) : "♛".colorize(:red)
   end
 
   def valid_moves
