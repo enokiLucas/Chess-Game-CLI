@@ -5,11 +5,7 @@ class King < Piece
   end
 
 	def symbol
-    if @color == :white
-      "♔"
-    else
-      "♚"
-    end
+    color == :white ? "♔" : "♚"
   end
 
   def valid_moves
