@@ -1,3 +1,11 @@
+require_relative 'king'
+require_relative 'queen'
+require_relative 'bishop'
+require_relative 'knight'
+require_relative 'rook'
+require_relative 'pawn'
+
+
 class Board
 	attr_accessor :grid 
 
@@ -35,7 +43,48 @@ class Board
   end
 
   def display
-    # display the board
+    puts "  A B C D E F G H "
+    puts " +----------------+ "
+    @board.each_with_index do |row, i|
+      print "#{8 - i}|"
+      row.each do |piece|
+        if piece.nil?
+          print "  "
+        else
+          print "#{piece.symbol} "
+        end
+      end
+      puts "|#{8 - i}"
+    end
+    puts " +----------------+ "
+    puts "  A B C D E F G H "
+  end
+
+  private
+
+  def setup_board
+    @board[0] = [
+      Rook.new(:black, [0, 0]),
+      Knight.new(:black, [0, 1]),
+      Bishop.new(:black, [0, 2]),
+      Queen.new(:black, [0, 3]),
+      King.new(:black, [0, 4]),
+      Bishop.new(:black, [0, 5]),
+      Knight.new(:black, [0, 6]),
+      Rook.new(:black, [0, 7])
+    ]
+    @board[1] = Array.new(8) { |i| Pawn.new(:black, [1, i]) }
+    @board[6] = Array.new(8) { |i| Pawn.new(:white, [6, i]) }
+    @board[7] = [
+      Rook.new(:white, [7, 0]),
+      Knight.new(:white, [7, 1]),
+      Bishop.new(:white, [7, 2]),
+      Queen.new(:white, [7, 3]),
+      King.new(:white, [7, 4]),
+      Bishop.new(:white, [7, 5]),
+      Knight.new(:white, [7, 6]),
+      Rook.new(:white, [7, 7])
+    ]
   end
 
   def move_piece(start_pos, end_pos)
