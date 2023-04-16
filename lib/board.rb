@@ -1,6 +1,38 @@
 class Board
+	attr_accessor :grid 
+
   def initialize
-    # create the board and set up the pieces
+    @grid = Array.new(8) { Array.new(8) }
+
+    # Set up the starting positions of the pieces
+    [:white, :black].each do |color|
+      back_row = color == :white ? 7 : 0
+      front_row = color == :white ? 6 : 1
+
+      # Pawns
+      (0..7).each do |col|
+        @grid[front_row][col] = Pawn.new(color, [front_row, col], self)
+      end
+
+      # Rooks
+      @grid[back_row][0] = Rook.new(color, [back_row, 0], self)
+      @grid[back_row][7] = Rook.new(color, [back_row, 7], self)
+
+      # Knights
+      @grid[back_row][1] = Knight.new(color, [back_row, 1], self)
+      @grid[back_row][6] = Knight.new(color, [back_row, 6], self)
+
+      # Bishops
+      @grid[back_row][2] = Bishop.new(color, [back_row, 2], self)
+      @grid[back_row][5] = Bishop.new(color, [back_row, 5], self)
+
+      # Queen
+      @grid[back_row][3] = Queen.new(color, [back_row, 3], self)
+
+      # King
+      @grid[back_row][4] = King.new(color, [back_row, 4], self)
+    end
+  end
   end
 
   def display
