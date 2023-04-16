@@ -1,3 +1,4 @@
+require 'colorize'
 
 require_relative 'piece'
 require_relative 'king'
@@ -49,11 +50,19 @@ class Board
     puts " +----------------+ "
     @grid.each_with_index do |row, i|
       print "#{8 - i}|"
-      row.each do |piece|
+      row.each_with_index do |piece, j|
         if piece.nil?
-          print "  "
+          if (i + j).even?
+            print "   ".on_white
+          else
+            print "   ".on_black
+          end
         else
-          print "#{piece.symbol} "
+          if (i + j).even?
+            print " #{piece.symbol} ".on_white
+          else
+            print " #{piece.symbol} ".on_black
+          end
         end
       end
       puts "|#{8 - i}"
