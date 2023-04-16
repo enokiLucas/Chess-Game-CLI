@@ -1,3 +1,5 @@
+
+require_relative 'piece'
 require_relative 'king'
 require_relative 'queen'
 require_relative 'bishop'
