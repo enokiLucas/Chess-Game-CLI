@@ -33,7 +33,6 @@ class Board
       @grid[back_row][4] = King.new(color, [back_row, 4], self)
     end
   end
-  end
 
   def display
     # display the board
