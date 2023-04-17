@@ -10,6 +10,10 @@ require_relative 'lib/queen'
 require_relative 'lib/king'
 
 board = Board.new
+board.display
+
 bishop = board[[0, 2]]
 board.move_piece([0, 2], [2, 0])
 puts bishop.pos # should output [2, 0]
+
+board.display
