@@ -99,7 +99,14 @@ class Board
   end
 
   def move_piece(start_pos, end_pos)
-    # move a piece from start_pos to end_pos
+    piece = self[start_pos]
+    if piece.valid_moves.include?(end_pos)
+      piece.move_to(end_pos)
+      self[start_pos] = nil
+      self[end_pos] = piece
+    else
+      raise "Invalid move"
+    end
   end
 
   def valid_move?(start_pos, end_pos)
