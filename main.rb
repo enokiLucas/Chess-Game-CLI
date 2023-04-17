@@ -9,5 +9,7 @@ require_relative 'lib/rook'
 require_relative 'lib/queen'
 require_relative 'lib/king'
 
-test = Board.new
-test.display
+board = Board.new
+bishop = board[[0, 2]]
+board.move_piece([0, 2], [2, 0])
+puts bishop.pos # should output [2, 0]

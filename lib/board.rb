@@ -71,7 +71,17 @@ class Board
     puts "  A B C D E F G H "
   end
 
-  private
+
+	def [](pos)
+    row, col = pos
+    @grid[row][col]
+  end
+
+  def []=(pos, piece)
+    row, col = pos
+    @grid[row][col] = piece
+  end
+
 
   def setup_board
     @grid[0] = [

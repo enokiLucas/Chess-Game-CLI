@@ -15,4 +15,8 @@ class Piece
   def symbol
     raise NotImplementedError, "Subclass must implement abstract method"
   end
+
+	def pos
+    @pos
+  end
 end
