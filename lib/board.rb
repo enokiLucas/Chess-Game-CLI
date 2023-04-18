@@ -22,7 +22,7 @@ class Board
 
       # Pawns
       (0..7).each do |col|
-        @grid[front_row][col] = Pawn.new(color, [front_row, col])
+        @grid[front_row][col] = Pawn.new(color, [front_row, col], self)
       end
 
       # Rooks
