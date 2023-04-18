@@ -1,8 +1,9 @@
 require 'colorize'
 
 class Bishop < Piece
-  def initialize(color, pos)
+  def initialize(color, pos, board)
     super(color, pos)
+		@board = board
   end
 
 	def symbol

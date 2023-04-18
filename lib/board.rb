@@ -34,8 +34,8 @@ class Board
       @grid[back_row][6] = Knight.new(color, [back_row, 6])
 
       # Bishops
-      @grid[back_row][2] = Bishop.new(color, [back_row, 2])
-      @grid[back_row][5] = Bishop.new(color, [back_row, 5])
+      @grid[back_row][2] = Bishop.new(color, [back_row, 2], self)
+      @grid[back_row][5] = Bishop.new(color, [back_row, 5], self)
 
       # Queen
       @grid[back_row][3] = Queen.new(color, [back_row, 3])
